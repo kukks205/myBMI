@@ -1,0 +1,36 @@
+<ion-view view-title="My BMI" >
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">น้ำหนัก(kg.)</span>
+                <input type="number" ng-model="bw" placeholder="น้ำหนัก(kg.)">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">ส่วนสูง(Cm.)</span>
+                <input type="number" ng-model="height" placeholder="ส่วนสูง(Cm.)">
+            </label>
+            <button class="button icon-left ion-home" ng-click="bmiCalc(bw,height)">คำนวณ</button>
+            <!--            <button class="button button-block button-balanced" ng-show="bmi<=23">
+                {{bmi | number:2 }}
+            </button>-->
+
+            <a href="#/tab/bmi/{{bmi}}" class="button button-block button-balanced" ng-show="bmi<=23">
+              {{bmi | number:2 }}
+            </a>
+            
+            <a href="#/tab/bmi/{{bmi}}" class="button button-block button-energized" ng-show="bmi>=23&&bmi<=25">
+              {{bmi | number:2 }}
+            </a>
+
+            <!--<button class="button button-block button-energized" ng-show="bmi>=23&&bmi<=25" ng-click="goTo(bmi)">
+                {{bmi | number:2}}
+            </button>
+            <button class="button button-block button-assertive" ng-show="bmi>25">
+                {{bmi | number:2}}
+            </button>-->
+            <a href="#/tab/bmi/{{bmi}}" class="button button-block button-assertive" ng-show="bmi>25">
+              {{bmi | number:2 }}
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
